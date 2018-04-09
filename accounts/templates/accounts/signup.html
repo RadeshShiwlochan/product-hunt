@@ -9,15 +9,32 @@
     </br>
 {% endif %}
 
-<form method="POST" action="{% url 'signup' %}">
-	{% csrf_token %}
-	Username 
-	<br /><input type="text" name="username"><br />
-	Password 
-	<br /><input type="password" name="password1"><br />
-	Confirm Password 
-	<br /><input type="password" name="password2"><br />
-	<input type="submit" value="Sign Up!" class="btn btn-primary">
-</form>
+
+
+
+<div class="row">
+  <form class="px-4" method="POST" action="{% url 'signup' %}">
+  	{% csrf_token %}
+  	<div class="col-16">
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Username</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" name="username">
+      </div>
+    </div>
+    <div class="col-16">
+        <div class="form-group">
+           <label for="exampleDropdownFormPassword1">Password</label>
+           <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" name="password1">
+        </div>
+    </div>
+    <div class="col-16">
+        <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password2">
+        </div>
+    </div>    
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+</div>
 
 {% endblock %}
