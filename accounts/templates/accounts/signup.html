@@ -9,11 +9,8 @@
     </br>
 {% endif %}
 
-
-
-
 <div class="row">
-  <form class="px-4" method="POST" action="{% url 'signup' %}">
+  <form class="px-4" method="POST" action="{% url 'login' %}">
   	{% csrf_token %}
   	<div class="col-16">
         <div class="form-group">
@@ -33,7 +30,7 @@
             <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name="password2">
         </div>
     </div>    
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary">Sign up</button>
   </form>
 </div>
 
