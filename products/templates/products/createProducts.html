@@ -1,5 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3> Create Products page</h3>
+<h3> Create </h3>
+
+<div class="row">
+  <form class="px-4" method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+  	{% csrf_token %}
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title"  name="title">
+    </div>
+    <div class="form-group">
+        <label for="body">Body</label>
+        <input type="textbox" class="form-control" id="body" name="body">
+    </div> 
+    <div class="form-group">
+        <label for="url">URL</label>
+        <input type="text" class="form-control" placeholder="url" name="url">
+    </div>
+    <div class="form-group">
+        <label for="icon">Icon</label>
+        <input type="file" name="icon">
+    </div>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" id="image" placeholder="Password" name="image">
+    </div>  
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+</div>
 
 {% endblock %}
