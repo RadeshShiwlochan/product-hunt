@@ -10,12 +10,12 @@
 {% endif %}
 
 <div class="row">
-  <form class="px-4" method="POST" action="{% url 'login' %}">
+  <form class="px-4" method="POST" action="{% url 'signup' %}">
   	{% csrf_token %}
   	<div class="col-16">
         <div class="form-group">
             <label for="exampleDropdownFormEmail1">Username</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" name="username">
+            <input type="text" class="form-control" id="exampleDropdownFormEmail1" name="username">
       </div>
     </div>
     <div class="col-16">
