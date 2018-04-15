@@ -9,7 +9,7 @@ def home( request ):
     products = Products.objects
     return render( request, 'products/home.html', { 'products': products } )
 
-@login_required
+@login_required( login_url="/accounts/signup" )
 def create( request ):
 	#only users that are logged in can visit this page
     if request.method == 'POST':
@@ -38,12 +38,12 @@ def create( request ):
         render( request, 'products/createProducts.html' )    	
     return render( request, 'products/createProducts.html' )
 
-@login_required
+@login_required( login_url="/accounts/signup" )
 def detail( request, product_id ):
     product = get_object_or_404(Products, pk=product_id )
     return render( request, 'products/detail.html', { 'product': product } )
 
-@login_required
+@login_required( login_url="/accounts/signup" )
 def upvote( request, product_id ):
     if request.method == 'POST':
         product = get_object_or_404( Products, pk=product_id )
